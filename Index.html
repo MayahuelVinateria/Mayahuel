@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mayahuel Vinatería</title>
+    <link rel="stylesheet" href="Index.css">
+    <link rel="icon" href="imagenes/Logo_mayahuel.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header class="top-header">
+  <div class="logo-container">
+    <img src="imagenes/logob.png" alt="Logo Mayahuel" class="logo-img">
+  </div>
+
+  <nav class="nav-menu">
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="Promociones.html">Promociones</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" placeholder="Buscar..." class="search-input">
+    <button class="search-btn">🔍</button>
+  </div>
+</header>
+
+	
+	<div class="carrusel">
+  <button class="carrusel-btn" id="prev">&#10094;</button>
+
+  <div class="carrusel-imagenes">
+    <img src="imagenes/gif1.gif" class="gif-slide" alt="GIF 1">
+    <img src="imagenes/gif2.gif" class="gif-slide" alt="GIF 2">
+    <img src="imagenes/gif3.gif" class="gif-slide" alt="GIF 3">
+  </div>
+
+  <button class="carrusel-btn" id="next">&#10095;</button>
+</div>
+
+	<script>
+  const carrusel = document.querySelector('.carrusel-imagenes');
+  const slides = document.querySelectorAll('.gif-slide');
+  let index = 0;
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    actualizarCarrusel();
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    actualizarCarrusel();
+  });
+
+  function actualizarCarrusel() {
+    carrusel.style.transform = `translateX(-${index * 100}%)`;
+  }
+</script>
+
+	<div class="imagenes-centradas">
+  <img src="imagenes/mision.png" alt="mv" class="imag">
+  <img src="imagenes/gif4.gif" class="imag" alt="mv">
+  <img src="imagenes/vision.png" alt="mv" class="imag">
+</div>
+
+	
+    <section class="beneficios">
+        <div class="beneficio">
+            <h3>Entrega rápida</h3>
+            <p>Envíos en menos de 48 hrs en CDMX y zona metropolitana.</p>
+        </div>
+        <div class="beneficio">
+            <h3>Garantía de calidad</h3>
+            <p>Productos seleccionados con procesos artesanales.</p>
+        </div>
+        <div class="beneficio">
+            <h3>Soporte personalizado</h3>
+            <p>Atención por WhatsApp y redes 24/7.</p>
+        </div>
+        <div class="beneficio">
+            <h3>Descuentos exclusivos</h3>
+            <p>Solo para clientes registrados.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Mayahuel Vinatería. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
